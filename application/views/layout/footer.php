@@ -1,6 +1,6 @@
  <footer class="site-footer" style="position: absolute; bottom: 0; width: 100%; z-index: -1;">
           <div class="text-center">
-              © copyright 2017 | Mars Project
+              © copyright <?php echo date('Y'); ?> | Mars Project
               <a href="basic_table.html#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>

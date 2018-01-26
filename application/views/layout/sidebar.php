@@ -21,6 +21,12 @@
                       </a>
                   </li>
                   <li class="sub-menu">
+                      <a class="<?php if($this->uri->segment(1)=="anggota"){ echo "active"; } ?>" href="<?php echo site_url('anggota'); ?>">
+                          <i class="fa fa-user"></i>
+                          <span>Anggota</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
                       <a href="divisi.html" >
                           <i class="fa fa-columns"></i>
                           <span>Divisi</span>
@@ -36,12 +42,6 @@
                       <a href="penghargaan.html" >
                           <i class=" fa fa-trophy"></i>
                           <span>Penghargaan</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a class="<?php if($this->uri->segment(1)=="anggota"){ echo "active"; } ?>" href="<?php echo site_url('anggota'); ?>">
-                          <i class="fa fa-user"></i>
-                          <span>Anggota</span>
                       </a>
                   </li>
                   <li class="sub-menu">
