@@ -6,9 +6,9 @@ class Login extends CI_Controller {
 	function __construct() {
 		parent::__construct();
     	$this->load->model('mod_login');
-    	if($this->session->userdata('status') == 'login'){
-			redirect('dashboard');
-		}
+  //   	if($this->session->userdata('status') == 'login'){
+		// 	redirect('dashboard');
+		// }
 	}
 
 	public function index()
@@ -29,8 +29,8 @@ class Login extends CI_Controller {
 		if($validation > 0){
 			$hasil = $this->mod_login->validate($where)->row();
 			$data_session = array(
-	        	'id' => $hasil->id,
-	        	'nama' => $hasil->nama,
+	        	'id' => $hasil->id_admin,
+	        	'nama' => $hasil->nama_admin,
 	        	'status' => 'login'
 	        );
 	    	$this->session->set_userdata($data_session);

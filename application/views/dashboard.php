@@ -4,7 +4,6 @@
 
               <div class="row">
                   <div class="col-lg-12 main-chart">
-                  
                     <div class="row mtbox">
                         <div class="col-md-2 col-sm-2 col-md-offset-1 box0">
                             <div class="box1">

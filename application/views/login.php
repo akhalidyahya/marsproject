@@ -40,6 +40,7 @@
 	  				</div>
 	  			<?php } ?>
 		        <div class="login-wrap">
+                    <?php echo $this->session->userdata('status'); ?>
 		            <input name="username" type="text" class="form-control" placeholder="Username" autofocus>
 		            <br>
 		            <input name="password" type="password" class="form-control" placeholder="Password">
