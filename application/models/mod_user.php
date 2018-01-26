@@ -10,6 +10,10 @@ class mod_user extends CI_Model
     	return $this->db->get();
 	}
 
+	function saveData($data){
+		 $this->db->insert('admin',$data);
+	}
+
 	function update($id,$data){
   		$this->db->where('id_admin',$id);
   		return $this->db->update('admin',$data);
@@ -21,7 +25,12 @@ class mod_user extends CI_Model
 	}
 
 	function deleteAll(){
-		$this->db->empty_table('admin');
+		$this->db->truncate('admin');
 	}
+
+	function edit($id){
+    	$this->db->where('id_admin',$id);
+    	return $this->db->get('admin');
+  	}
 }
  ?>

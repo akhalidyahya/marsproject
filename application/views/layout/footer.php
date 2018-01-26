@@ -23,5 +23,30 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/gritter-conf.js"></script>
 
+    <?php 
+      if($this->session->userdata('success')=='success'){ ?>
+
+        <script type="text/javascript">
+          $(document).ready(function () {
+            var unique_id = $.gritter.add({
+              // (string | mandatory) the heading of the notification
+              title: 'Your Action was Successful!',
+              // (string | mandatory) the text inside the notification
+              text: ' ',
+              // (string | optional) the image to display on the left
+              image: '<?php echo base_url(); ?>assets/img/alert/success.png',
+              // (bool | optional) if you want it to fade out on its own or just sit there
+              sticky: true,
+              // (int | optional) the time you want it to be alive for before fading out
+              time: '',
+              // (string | optional) the class name you want to apply to that specific message
+              class_name: 'my-sticky-class'
+            });
+          return false;
+          });
+        </script>
+
+    <?php } ?>
+
   </body>
 </html>

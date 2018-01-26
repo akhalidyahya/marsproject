@@ -4,8 +4,8 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-                  <p class="centered"><img src="<?php echo base_url(); ?>assets/upload/user/ui-sam.jpg" class="img-circle" width="60"></p>
-                  <h5 class="centered">User</h5>
+                  <p class="centered"><img src="<?php echo base_url(); ?>assets/upload/user/<?php echo $this->session->userdata('foto'); ?>" class="img-circle" width="60"></p>
+                  <h5 class="centered"><?php echo $this->session->userdata('nama'); ?></h5>
                     
                   <li class="mt">
                       <a class="<?php if($this->uri->segment(1)=="dashboard"){ echo "active"; } ?>" href="<?php echo base_url() ?>index.php/dashboard">

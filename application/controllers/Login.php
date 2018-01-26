@@ -31,6 +31,7 @@ class Login extends CI_Controller {
 			$data_session = array(
 	        	'id' => $hasil->id_admin,
 	        	'nama' => $hasil->nama_admin,
+	        	'foto' => $hasil->foto_admin,
 	        	'status' => 'login'
 	        );
 	    	$this->session->set_userdata($data_session);
