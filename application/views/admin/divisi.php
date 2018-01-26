@@ -10,9 +10,9 @@
                               <thead>
                                 <div class="row">
                                   <div class="col-md-12">
-                                    <button class="btn btn-success" onclick=""><i class="glyphicon glyphicon-plus"></i> Add Divisi </button>
-                                    <button class="btn btn-danger" onclick=""><i class="glyphicon glyphicon-remove"></i> Delete All </button>
-                                    <button class="btn btn-primary" onclick=""><i class="glyphicon glyphicon-refresh"></i> Reload </button>
+                                    <button class="btn btn-success" onclick=""><i class="fa fa-plus"></i> Add Divisi </button>
+                                    <button class="btn btn-danger" onclick=""><i class="fa fa-times"></i> Delete All </button>
+                                    <button class="btn btn-primary" onclick=""><i class="fa fa-refresh"></i> Reload </button>
                                   </div>
                                 </div>
                               <tr>
