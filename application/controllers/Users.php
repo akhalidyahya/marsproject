@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Achievements extends CI_Controller {
+class Users extends CI_Controller {
 
 	public function index()
 	{
 		$this->load->view('layout/header');
 		$this->load->view('layout/sidebar');
-		$this->load->view('admin/penghargaan');
+		$this->load->view('admin/users');
 		$this->load->view('layout/footer');
 	}
 }

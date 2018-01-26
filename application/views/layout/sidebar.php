@@ -15,7 +15,7 @@
                   </li>
 
                   <li class="sub-menu <?php if($this->uri->segment(1)=="slider"){ echo "active"; } ?>">
-                      <a href="<?php echo base_url(); ?>index.php/slider ?>" >
+                      <a href="<?php echo site_url('slider'); ?>" >
                           <i class="fa fa-picture-o"></i>
                           <span>Slider</span>
                       </a>
@@ -27,7 +27,7 @@
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="divisi.html" >
+                      <a class="<?php if($this->uri->segment(1)=="divisi"){ echo "active"; } ?>" href="<?php echo site_url('divisi'); ?>" >
                           <i class="fa fa-columns"></i>
                           <span>Divisi</span>
                       </a>
@@ -39,13 +39,13 @@
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="penghargaan.html" >
+                      <a class="<?php if($this->uri->segment(1)=="achievements"){ echo "active"; } ?>" href="<?php echo site_url('achievements'); ?>" >
                           <i class=" fa fa-trophy"></i>
                           <span>Penghargaan</span>
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="users.html" >
+                      <a class="<?php if($this->uri->segment(1)=="users"){ echo "active"; } ?>" href="<?php echo site_url('users'); ?>" >
                           <i class="fa fa-users"></i>
                           <span>Users</span>
                       </a>
