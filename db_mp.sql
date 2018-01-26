@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2018 at 05:12 PM
+-- Generation Time: Jan 26, 2018 at 04:06 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.2.1
 
@@ -31,15 +31,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id_admin` int(11) NOT NULL,
   `nama_admin` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `foto_admin` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id_admin`, `nama_admin`, `password`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO `admin` (`id_admin`, `nama_admin`, `password`, `foto_admin`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin.jpg');
 
 -- --------------------------------------------------------
 
