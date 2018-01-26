@@ -45,7 +45,7 @@
 
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="<?php echo site_url('login/logout'); ?>" style="color:#424a5d;">Logout</a></li>
+                    <li><a class="logout" href="" style="color:#424a5d;">Logout</a></li>
                 </ul>
             </div>
         </header>
