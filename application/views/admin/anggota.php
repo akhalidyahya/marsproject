@@ -11,8 +11,8 @@
                               <thead>
                                 <div class="row">
                                   <div class="col-md-12">
-                                    <button class="btn btn-success" onclick=""><i class="fa fa-plus"></i> Add Anggota </button>
-                                    <button class="btn btn-danger" onclick=""><i class="fa fa-times"></i> Delete All </button>
+                                    <a href="<?php echo base_url(); ?>index.php/anggota/addAnggota"><button class="btn btn-success" onclick=" "><i class="fa fa-plus"></i> Add Anggota </button></a>
+                                    <a href="<?php echo base_url(); ?>index.php/anggota/deleteAllAnggota" onclick="return confirm('Delete all data?');"><button class="btn btn-danger" onclick=" "><i class="fa fa-times"></i> Delete All </button></a>
                                     <button class="btn btn-primary" onclick=""><i class="fa fa-refresh"></i> Reload </button>
                                   </div>
                                 </div>
@@ -25,16 +25,18 @@
                               </tr>
                               </thead>
                               <tbody>
+                              <?php foreach ($data_anggota as $anggota) { ?>
                               <tr>
-                                  <td> Company Ltd </td>
-                                  <td> Lorem Ipsum dolor </td>
-                                  <td> Lorem </td>
-                                  <td> Ipsum </td>
+                                  <td><?php echo $anggota->nama_anggota; ?></td>
+                                  <td style="text-align: center;"> <img style="max-width: 200px;" src="<?php echo base_url(); ?>assets/img/anggota/<?php echo $anggota->foto_anggota; ?>"> </td>
+                                  <td><?php echo $anggota->nama_divisi; ?></td>
+                                  <td><?php echo $anggota->jabatan; ?></td>
                                   <td>
-                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                      <a href="<?php echo base_url(); ?>index.php/anggota/editAnggota/<?php echo $anggota->id_anggota; ?>"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                      <a onclick="return confirm('Delete this data?');" href="<?php echo base_url(); ?>index.php/anggota/deleteAnggota/<?php echo $anggota->id_anggota; ?>"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></a>
                                   </td>
                               </tr>
+                              <?php } ?>
                               </tbody>
                           </table>
                       </div><!-- /content-panel -->

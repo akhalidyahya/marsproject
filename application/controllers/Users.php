@@ -68,7 +68,6 @@ class Users extends CI_Controller {
 	    }else{
 	      if($action == "add"){
 	        echo $this->upload->display_errors();
-	        echo realpath(APPPATH . '../assets/upload/user');
 	      }
 	    }
 

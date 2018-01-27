@@ -33,7 +33,7 @@
                                   <td>
                                   <a href="<?php echo base_url(); ?>index.php/users/editUser/<?php echo $admin->id_admin; ?>"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
                                   <a onclick="return confirm('Delete this data?');" href="<?php echo base_url(); ?>index.php/users/deleteUser/<?php echo $admin->id_admin; ?>"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></a>
-                                      </td>
+                                  </td>
                                 </tr>
                               <?php } ?>
                               </tbody>
