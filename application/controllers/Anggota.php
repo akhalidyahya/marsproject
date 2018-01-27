@@ -40,7 +40,7 @@ class Anggota extends CI_Controller {
 			'title' => 'Form edit anggota',
 			'action' => 'edit',
 			'data' => $this->mod_anggota->edit($id)->result(),
-			'data_divisi' =>  $this->mod_divisi->getData()->result()
+			'data_divisi' => $this->mod_divisi->getData()->result()
 		);
 		
 		$this->load->view('layout/header');

@@ -1,5 +1,15 @@
 <?php
+$id ="";
+$nama = "";
+$keterangan = "";
 
+if ($action == 'edit') {
+  foreach ($data as $data_penghargaan) {
+    $id = $data_penghargaan->id_penghargaan;
+    $nama = $data_penghargaan->nama_mhs;
+    $keterangan = $data_penghargaan->keterangan;
+  }
+}
 
  ?>
 
@@ -16,11 +26,11 @@
                       <?php echo form_open_multipart('Achievements/saveData');?>
                         <div class="form-horizontal style-form">
                           <input type="hidden" name="action" value="<?php echo $action; ?>">
-                          <input type="hidden" name="id_penghargaan">
+                          <input type="hidden" name="id_penghargaan" value="<?php echo $id; ?>">
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Nama</label>
                               <div class="col-sm-10">
-                                  <input name="nama" type="text" class="form-control" required \>
+                                  <input name="nama" type="text" class="form-control" required value="<?php echo $nama; ?>" \>
                               </div>
                           </div>
                           <div class="form-group">
@@ -34,7 +44,7 @@
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">keterangan</label>
                               <div class="col-sm-10">
-                                  <input name="keterangan" type="text" class="form-control" required>
+                                  <input name="keterangan" type="text" class="form-control" required value="<?php echo $keterangan; ?>">
                                 <span class="help-block"></span>
                               </div>
                           </div>
