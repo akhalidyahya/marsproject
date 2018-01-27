@@ -48,6 +48,7 @@
                               <label class="col-sm-2 col-sm-2 control-label">foto</label>
                               <div class="col-sm-10">
                                   <input name="foto" type="file" class="form-control" <?php if($action == 'add'){echo "required";} ?>>
+                                  <label class="label label-warning">Foto max 2732 x 1536 pixel</label>
                               </div>
                           </div>
                           <button class="btn btn-theme " type="submit">Save data</button>

@@ -61,7 +61,7 @@ class Anggota extends CI_Controller {
       		'id_divisi'=>$divisi
     	);
 
-    	$config['upload_path'] = realpath(APPPATH . '../assets/img/anggota');
+    	$config['upload_path'] = realpath(APPPATH . '../assets/upload/anggota');
 	    $config['allowed_types'] = 'gif|jpg|png';
 	    $config['max_size']     = 3000;
 	    $config['max_width'] = 2732;

@@ -28,7 +28,7 @@
                               <?php foreach ($data_anggota as $anggota) { ?>
                               <tr>
                                   <td><?php echo $anggota->nama_anggota; ?></td>
-                                  <td style="text-align: center;"> <img style="max-width: 200px;" src="<?php echo base_url(); ?>assets/img/anggota/<?php echo $anggota->foto_anggota; ?>"> </td>
+                                  <td style="text-align: center;"> <img style="max-width: 200px;" src="<?php echo base_url(); ?>assets/upload/anggota/<?php echo $anggota->foto_anggota; ?>"> </td>
                                   <td><?php echo $anggota->nama_divisi; ?></td>
                                   <td><?php echo $anggota->jabatan; ?></td>
                                   <td>
