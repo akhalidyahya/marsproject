@@ -335,14 +335,14 @@ body.open {
 	margin: 10px 0;
 }
 
-.news-box p {
+.news-box p, .main-news p {
 	font-family: "montserrat reguler";
 	font-size: 16px;
 	line-height: 200%;
 	padding: 10px;
 }
 
-.news-box a {
+.news-box a, .main-news a {
 	font-size: 18px;
 	text-decoration: none;
 	color: #2dc1d3;
@@ -350,7 +350,7 @@ body.open {
 	font-family: "montserrat bold";
 }
 
-.news-box a:hover {
+.news-box a:hover, .main-news a:hover {
 	border-bottom: 2px solid #2dc1d3;
 }
 /*latest news END*/

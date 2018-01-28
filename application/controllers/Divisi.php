@@ -7,6 +7,9 @@ class Divisi extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('mod_divisi');
+		if($this->session->userdata('status') != 'login'){
+			redirect('login');
+		}
 	}
 
 	public function index()

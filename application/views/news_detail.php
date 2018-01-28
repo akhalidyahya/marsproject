@@ -51,24 +51,25 @@
 	<!-- Hero News END -->
 
 	<!-- Main -->
-	<section style="padding: 20px;">
+	<section>
 		<div class="container">
 			<div class="row">
-				<?php foreach ($data_berita as $blog) { ?>
-					<div class="col-md-4">
-						<div class="news-box">
-							<img src="<?php echo base_url(); ?>assets/upload/berita/<?php echo $blog->gambar; ?>" class="img-responsive">
-							<p class="timestamps">Posted: <?php echo $blog->tanggal_buat; ?> </p>
-							<h1><?php echo $blog->judul ?></h1>
-							<p><?php echo substr($blog->isi,0,200) ?></p>
-							<a href="<?php echo base_url(); ?>index.php/news/detailnews/<?php echo $blog->id_berita; ?>">see more</a>
+				<?php foreach ($data_detail as $detail) { ?>
+					<div class="col-xs-12">
+						<h1 class="text-center"><?php echo $detail->judul; ?></h1>
+						<div class="text-center timestamps">posted in: <?php echo $detail->tanggal_buat; ?></div>
+						<div class="text-center timestamps">By: <?php echo $detail->nama_admin; ?></div>
+						<div style="padding: 20px 0px;"><img class="img-responsive" src="<?php echo base_url(); ?>assets/upload/berita/<?php echo $detail->gambar; ?>"></div>
+						<div class="main-news">
+							<p>
+								<?php echo $detail->isi; ?>
+							</p>
 						</div>
 					</div>
 				<?php } ?>
-				
 			</div>
 			<div class="text-center">
-				<a href="<?php echo site_url() ?>"><button>kembali ke beranda</button></a>
+				<a href="<?php echo site_url() ?>/news"><button>kembali ke berita</button></a>
 			</div>
 		</div>
 	</section>

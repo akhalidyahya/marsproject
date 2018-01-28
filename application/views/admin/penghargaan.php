@@ -31,8 +31,8 @@
                                   <td style="text-align: center;"> <img  style="max-width: 200px; " src="<?php echo base_url(); ?>assets/upload/penghargaan/<?php echo $penghargaan->foto; ?>"> </td>
                                   <td> <?php echo $penghargaan->keterangan ?></td>
                                   <td>
-                                      <a href="<?php echo base_url(); ?>index.php/Achievements/editPenghargaan/<?php echo $penghargaan->id_penghargaan; ?>"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                                      <a onclick="return confirm('Delete this data?');" href="<?php echo base_url(); ?>index.php/Achievements/deletePenghargaan/<?php echo $penghargaan->id_penghargaan; ?>"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></a>
+                                      <a href="<?php echo base_url(); ?>index.php/achievements/editPenghargaan/<?php echo $penghargaan->id_penghargaan; ?>"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                      <a onclick="return confirm('Delete this data?');" href="<?php echo base_url(); ?>index.php/achievements/deletePenghargaan/<?php echo $penghargaan->id_penghargaan; ?>"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></a>
                                   </td>
                               </tr>
                               <?php } ?>

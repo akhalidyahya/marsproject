@@ -23,7 +23,7 @@ if ($action == 'edit') {
             <div class="form-panel">
                       <h4 class="mb"><i class="fa fa-angle-right"></i> <?php echo $title; ?> </h4>
                       <!-- <form class="form-horizontal style-form"> -->
-                      <?php echo form_open_multipart('Achievements/saveData');?>
+                      <?php echo form_open_multipart('achievements/saveData');?>
                         <div class="form-horizontal style-form">
                           <input type="hidden" name="action" value="<?php echo $action; ?>">
                           <input type="hidden" name="id_penghargaan" value="<?php echo $id; ?>">

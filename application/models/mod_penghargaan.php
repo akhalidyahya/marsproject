@@ -11,6 +11,13 @@ class mod_penghargaan extends CI_model
 		$this->db->from('penghargaan');
 		return $this->db->get();
 	}
+	function getLatestData(){
+		$this->db->select('*');
+		$this->db->from('penghargaan');
+		$this->db->order_by('id_penghargaan','desc');
+		$this->db->limit('6');
+		return $this->db->get();
+	}
 	function saveData($data){
 		 $this->db->insert('penghargaan',$data);
 	}

@@ -23,17 +23,17 @@
 		</a>
 	</div>
 	<div class="menu-overlay">
-		<h1>MARS PROJECT PNJ</h1>
+		<a style="margin: 0" href="<?php echo base_url(); ?>"><h1>MARS PROJECT PNJ</h1></a>
 		<a href="#">tentang kami</a>
 		<a href="#">visi misi</a>
 		<a href="#">struktur organisasi</a>
 		<a href="#">berita</a>
 		<a href="#">penghargaan</a>
 		<p>Keep in touch with us!</p>
-		<span><a href="">facebook</a></span>
-		<span><a href="">twitter</a></span>
-		<span><a href="">instagram</a></span>
-		<span><a href="">line</a></span>
+		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/fb.png" height="35px"></a></span>
+		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/tw.png" height="35px"></a></span>
+		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/ig.png" height="35px"></a></span>
+		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/ln.png" height="35px"></a></span>
 	</div>
 	<!-- Navigation END -->
 
@@ -121,49 +121,24 @@
 					<img src="<?php echo base_url(); ?>assets/img/struktur-organisasi.png" width="30%">
 					<h1>struktur organisasi</h1>
 					<div class="org-btn-container text-center">
-						<button type="button" class="control mixitup-control-active" data-filter=".bph">bph</button>
-						<button type="button" class="control" data-filter=".divisi-1">divisi 1</button>
-						<button type="button" class="control" data-filter=".divisi-2">divisi 2</button>
+						<?php foreach ($data_divisi as $divisi) { ?>
+							<button type="button" class="control" data-filter=".<?php echo $divisi->nama_divisi; ?>"><?php echo $divisi->nama_divisi; ?></button>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
 			<br><br>
 			<div class="row anggota-container text-center">
-				<div class="mix col-xs-6 col-sm-3 bph">
-					<div class="org-item">
-						<img src="<?php echo base_url(); ?>assets/img/anggota/1.jpg" width="100%">
-						<h1>Jane Doe</h1>
-						<p>Chief Officer</p>
+				<?php foreach ($data_struktur as $organisasi) { ?>
+					<div class="mix col-xs-6 col-sm-3 <?php echo $organisasi->nama_divisi; ?>">
+						<div class="org-item">
+							<img src="<?php echo base_url(); ?>assets/upload/anggota/<?php echo $organisasi->foto_anggota ?>" width="100%">
+							<h1><?php echo $organisasi->nama_anggota; ?></h1>
+							<p><?php echo $organisasi->jabatan; ?></p>
+						</div>
 					</div>
-				</div>
-				<div class="mix col-xs-6 col-sm-3 bph">
-					<div class="org-item">
-						<img src="<?php echo base_url(); ?>assets/img/anggota/2.jpg" width="100%">
-						<h1>John Doe</h1>
-						<p>Scretary</p>
-					</div>
-				</div>
-				<div class="mix col-xs-6 col-sm-3 bph">
-					<div class="org-item">
-						<img src="<?php echo base_url(); ?>assets/img/anggota/3.jpg" width="100%">
-						<h1>Jane Smith</h1>
-						<p>Finance</p>
-					</div>
-				</div>
-				<div class="mix col-xs-6 col-sm-3 divisi-1" style="display: none;">
-					<div class="org-item">
-						<img src="<?php echo base_url(); ?>assets/img/anggota/4.png" width="100%">
-						<h1>Mary Smith</h1>
-						<p>Staff division 1</p>
-					</div>
-				</div>
-				<div class="mix col-xs-6 col-sm-3 divisi-2" style="display: none;">
-					<div class="org-item">
-						<img src="<?php echo base_url(); ?>assets/img/anggota/5.png" width="100%">
-						<h1>Long Smith</h1>
-						<p>Staff division 2</p>
-					</div>
-				</div>
+				<?php } ?>
+				
 			</div>
 		</div>
 	</section>
@@ -177,42 +152,18 @@
 					<img src="<?php echo base_url(); ?>assets/img/latest-news.png" width="30%">
 					<h1>Berita terbaru</h1>
 					<div class="row">
-						<div class="col-md-4">
-							<div class="news-box">
-								<img src="<?php echo base_url(); ?>assets/img/news/1236.jpg" class="img-responsive">
-								<p class="timestamps">Posted: 2018/1/28 </p>
-								<h1>Lorem Ipsum</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.</p>
-								<a href="#">see more</a>
+						<?php foreach ($data_berita as $blog) { ?>
+							<div class="col-md-4">
+								<div class="news-box">
+									<img src="<?php echo base_url(); ?>assets/upload/berita/<?php echo $blog->gambar; ?>" class="img-responsive">
+									<p class="timestamps">Posted: <?php echo $blog->tanggal_buat; ?> </p>
+									<h1><?php echo $blog->judul ?></h1>
+									<p><?php echo substr($blog->isi,0,200) ?></p>
+									<a href="<?php echo base_url(); ?>index.php/news/detailnews/<?php echo $blog->id_berita; ?>">see more</a>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="news-box">
-								<img src="<?php echo base_url(); ?>assets/img/news/1236.jpg" class="img-responsive">
-								<p class="timestamps">Posted: 2018/1/28 </p>
-								<h1>Lorem Ipsum</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.</p>
-								<a href="#">see more</a>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="news-box">
-								<img src="<?php echo base_url(); ?>assets/img/news/1236.jpg" class="img-responsive">
-								<p class="timestamps">Posted: 2018/1/28 </p>
-								<h1>Lorem Ipsum</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.</p>
-								<a href="#">see more</a>
-							</div>
-						</div>
+						<?php } ?>
+						
 					</div>
 					<a href="<?php echo site_url('news'); ?>"><button>lihat berita lainnya</button></a>
 				</div>
@@ -231,48 +182,16 @@
 				</div>
 			</div>
 			<div class="row" style="margin: 50px 0;">
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/1.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+				<?php foreach ($data_penghargaan as $achievement) { ?>
+					<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
+						<div class="img-container">
+							<img src="<?php echo base_url(); ?>assets/upload/penghargaan/<?php echo $achievement->foto ?>" class="img-responsive">
+							<h1><?php echo $achievement->nama_mhs ?></h1>
+							<p><?php echo $achievement->keterangan ?></p>
+						</div>
 					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/2.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/3.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/1.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/2.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/3.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-					</div>
-				</div>
+				<?php } ?>
+				
 			</div>
 			<div class="text-center">
 				<a href="<?php echo site_url('achievements') ?>"><button>lihat penghargaan lainnya</button></a>

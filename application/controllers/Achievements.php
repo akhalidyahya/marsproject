@@ -6,6 +6,9 @@ class Achievements extends CI_Controller {
 	function __construct(){
 		parent:: __construct();
 		$this->load->model('mod_penghargaan');
+		if($this->session->userdata('status') != 'login'){
+			redirect('login');
+		}
 	}
 
 
