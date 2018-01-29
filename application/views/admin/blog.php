@@ -22,7 +22,7 @@
                                   <th> Isi </th>
                                   <th> Featured Photo </th>
                                   <th> Tanggal </th>
-                                  <th> Admin </th>
+                                  <th> Penulis </th>
                                   <th>jumlah pembaca</th>
                                   <th> Action </th>
                               </tr>

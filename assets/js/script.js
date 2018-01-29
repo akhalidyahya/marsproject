@@ -1,10 +1,11 @@
 $(document).ready(function() {
  
 	// Navigation
-	$(".menu-link").click(function(e) {
+	$(".menu-link,#nav").click(function(e) {
 	    e.preventDefault();
 	    $(".menu").toggleClass("open");
 	    $(".menu-overlay").toggleClass("open");
+	    $(".menu-circle").toggleClass("open");
 	    $("body").toggleClass("open");
  	});
 

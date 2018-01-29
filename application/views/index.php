@@ -24,11 +24,11 @@
 	</div>
 	<div class="menu-overlay">
 		<a style="margin: 0" href="<?php echo base_url(); ?>"><h1>MARS PROJECT PNJ</h1></a>
-		<a href="#">tentang kami</a>
-		<a href="#">visi misi</a>
-		<a href="#">struktur organisasi</a>
-		<a href="#">berita</a>
-		<a href="#">penghargaan</a>
+		<a class="scroll" id="nav" href="#about">tentang kami</a>
+		<a class="scroll" id="nav" href="#visi-misi">visi misi</a>
+		<a class="scroll" id="nav" href="#struktur-organisasi">struktur organisasi</a>
+		<a class="scroll" id="nav" href="#latest-news">berita</a>
+		<a class="scroll" id="nav" href="#penghargaan">penghargaan</a>
 		<p>Keep in touch with us!</p>
 		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/fb.png" height="35px"></a></span>
 		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/tw.png" height="35px"></a></span>
@@ -67,7 +67,7 @@
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</div>
 					<br>
-					<a class="scroll" href="#visi-misi"><button>Kenal lebih lanjut</button></a>
+					<a class="scroll" href="#visi-misi"><button>Kenali lebih lanjut</button></a>
 				</div>
 			</div>
 		</div>
@@ -121,6 +121,7 @@
 					<img src="<?php echo base_url(); ?>assets/img/struktur-organisasi.png" width="30%">
 					<h1>struktur organisasi</h1>
 					<div class="org-btn-container text-center">
+						<button type="button" class="control" data-filter="all">All</button>
 						<?php foreach ($data_divisi as $divisi) { ?>
 							<button type="button" class="control" data-filter=".<?php echo $divisi->nama_divisi; ?>"><?php echo $divisi->nama_divisi; ?></button>
 						<?php } ?>
@@ -159,7 +160,7 @@
 									<p class="timestamps">Posted: <?php echo $blog->tanggal_buat; ?> </p>
 									<h1><?php echo $blog->judul ?></h1>
 									<p><?php echo substr($blog->isi,0,200) ?></p>
-									<a href="<?php echo base_url(); ?>index.php/news/detailnews/<?php echo $blog->id_berita; ?>">see more</a>
+									<a class="seemore" href="<?php echo base_url(); ?>index.php/news/detailnews/<?php echo $blog->id_berita; ?>">see more</a>
 								</div>
 							</div>
 						<?php } ?>
@@ -194,7 +195,7 @@
 				
 			</div>
 			<div class="text-center">
-				<a href="<?php echo site_url('achievements') ?>"><button>lihat penghargaan lainnya</button></a>
+				<a href="<?php echo site_url('penghargaan') ?>"><button>lihat penghargaan lainnya</button></a>
 			</div>
 		</div>
 	</section>

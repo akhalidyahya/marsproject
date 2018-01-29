@@ -23,17 +23,17 @@
 		</a>
 	</div>
 	<div class="menu-overlay">
-		<h1>MARS PROJECT PNJ</h1>
-		<a href="#">tentang kami</a>
-		<a href="#">visi misi</a>
-		<a href="#">struktur organisasi</a>
-		<a href="#">berita</a>
-		<a href="#">penghargaan</a>
+		<a style="margin: 0" href="<?php echo base_url(); ?>"><h1>MARS PROJECT PNJ</h1></a>
+		<a href="<?php echo base_url() ?>#about">tentang kami</a>
+		<a href="<?php echo base_url() ?>#visi-misi">visi misi</a>
+		<a href="<?php echo base_url() ?>#struktur-organisasi">struktur organisasi</a>
+		<a href="<?php echo base_url() ?>#latest-news">berita</a>
+		<a href="<?php echo base_url() ?>#penghargaan">penghargaan</a>
 		<p>Keep in touch with us!</p>
-		<span><a href="">facebook</a></span>
-		<span><a href="">twitter</a></span>
-		<span><a href="">instagram</a></span>
-		<span><a href="">line</a></span>
+		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/fb.png" height="35px"></a></span>
+		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/tw.png" height="35px"></a></span>
+		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/ig.png" height="35px"></a></span>
+		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/ln.png" height="35px"></a></span>
 	</div>
 	<!-- Navigation END -->
 
@@ -59,6 +59,7 @@
 						<h1 class="text-center"><?php echo $detail->judul; ?></h1>
 						<div class="text-center timestamps">posted in: <?php echo $detail->tanggal_buat; ?></div>
 						<div class="text-center timestamps">By: <?php echo $detail->nama_admin; ?></div>
+						<div class="text-center timestamps">Telah dilihat: <?php echo $detail->index_pembaca; ?> kali</div>
 						<div style="padding: 20px 0px;"><img class="img-responsive" src="<?php echo base_url(); ?>assets/upload/berita/<?php echo $detail->gambar; ?>"></div>
 						<div class="main-news">
 							<p>
