@@ -330,7 +330,7 @@ body.open {
 	margin: 10px 0;
 }
 
-.news-box p, .main-news p {
+.news-box .isi, .main-news p {
 	font-family: "montserrat reguler";
 	font-size: 16px;
 	line-height: 200%;

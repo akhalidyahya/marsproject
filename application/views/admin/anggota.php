@@ -12,7 +12,7 @@
                                 <div class="row">
                                   <div class="col-md-12">
                                     <a href="<?php echo base_url(); ?>index.php/anggota/addAnggota"><button class="btn btn-success" onclick=" "><i class="fa fa-plus"></i> Add Anggota </button></a>
-                                    <a href="<?php echo base_url(); ?>index.php/anggota/deleteAllAnggota" onclick="return confirm('Delete all data?');"><button class="btn btn-danger" onclick=" "><i class="fa fa-times"></i> Delete All </button></a>
+                                    <a href="<?php echo base_url(); ?>index.php/anggota/deleteAllAnggota" onclick="return confirm('Delete all data?');"><button class="btn btn-danger" onclick=" " disabled><i class="fa fa-times"></i> Delete All </button></a>
                                     <button class="btn btn-primary" onclick=""><i class="fa fa-refresh"></i> Reload </button>
                                   </div>
                                 </div>

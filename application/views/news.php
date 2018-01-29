@@ -55,12 +55,12 @@
 		<div class="container">
 			<div class="row">
 				<?php foreach ($data_berita as $blog) { ?>
-					<div class="col-md-4">
+					<div class="col-sm-6 col-md-4">
 						<div class="news-box">
 							<img src="<?php echo base_url(); ?>assets/upload/berita/<?php echo $blog->gambar; ?>" class="img-responsive">
-							<p class="timestamps">Posted: <?php echo $blog->tanggal_buat; ?> </p>
+							<p class="p timestamps">Posted: <?php echo $blog->tanggal_buat; ?> </p>
 							<h1><?php echo $blog->judul ?></h1>
-							<p><?php echo substr($blog->isi,0,200) ?></p>
+							<div class="isi"><?php echo substr($blog->isi,0,200) ?></div>
 							<a href="<?php echo base_url(); ?>index.php/news/detailnews/<?php echo $blog->id_berita; ?>">see more</a>
 						</div>
 					</div>

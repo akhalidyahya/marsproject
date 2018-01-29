@@ -20,6 +20,7 @@ if ($action == 'edit') {
     <div class="row mt">
         <div class="col-md-12">
           <div class="content-panel">
+            <a onclick="return confirm('Kembali?');" href="<?php echo base_url(); ?>index.php/achievements"><button class="btn btn-success"><i class="fa fa-arrow-left "></i>Kembali</button></a>
             <div class="form-panel">
                       <h4 class="mb"><i class="fa fa-angle-right"></i> <?php echo $title; ?> </h4>
                       <!-- <form class="form-horizontal style-form"> -->

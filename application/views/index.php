@@ -154,12 +154,12 @@
 					<h1>Berita terbaru</h1>
 					<div class="row">
 						<?php foreach ($data_berita as $blog) { ?>
-							<div class="col-md-4">
+							<div class="col-sm-6 col-md-4">
 								<div class="news-box">
 									<img src="<?php echo base_url(); ?>assets/upload/berita/<?php echo $blog->gambar; ?>" class="img-responsive">
-									<p class="timestamps">Posted: <?php echo $blog->tanggal_buat; ?> </p>
+									<div class="isi timestamps">Posted: <?php echo $blog->tanggal_buat; ?> </div>
 									<h1><?php echo $blog->judul ?></h1>
-									<p><?php echo substr($blog->isi,0,200) ?></p>
+									<div class="isi"><?php echo substr($blog->isi,0,200) ?></div>
 									<a class="seemore" href="<?php echo base_url(); ?>index.php/news/detailnews/<?php echo $blog->id_berita; ?>">see more</a>
 								</div>
 							</div>

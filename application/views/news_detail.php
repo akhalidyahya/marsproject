@@ -43,7 +43,7 @@
 			<div class="row">
 				<div class="col-xs-12 text-center">
 					<img src="<?php echo base_url(); ?>assets/img/latest-news.png" width="30%">
-					<h1>Semua Berita</h1>
+					<h1>Berita</h1>
 				</div>
 			</div>
 		</div>
@@ -62,7 +62,7 @@
 						<div class="text-center timestamps">Telah dilihat: <?php echo $detail->index_pembaca; ?> kali</div>
 						<div style="padding: 20px 0px;"><img class="img-responsive" src="<?php echo base_url(); ?>assets/upload/berita/<?php echo $detail->gambar; ?>"></div>
 						<div class="main-news">
-							<p>
+							<p class="isi">
 								<?php echo $detail->isi; ?>
 							</p>
 						</div>

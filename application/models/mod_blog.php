@@ -10,6 +10,7 @@ class mod_blog extends CI_model
 		$this->db->select('*');
 	    $this->db->from('berita');
 	    $this->db->join('admin','admin.id_admin = berita.id_admin');
+	    $this->db->order_by('id_berita','desc');
 	    return $this->db->get();
 	}
 	function getLatestData(){

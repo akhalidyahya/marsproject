@@ -22,6 +22,7 @@
     
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/gritter-conf.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js"></script>
 
     <?php 
       if($this->session->userdata('success')=='success'){ ?>

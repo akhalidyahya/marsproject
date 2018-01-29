@@ -11,9 +11,9 @@
                               <thead>
                                 <div class="row">
                                   <div class="col-md-12">
-                                    <a href="<?php echo base_url();?>index.php/blog/addPenghargaan"><button class="btn btn-success" onclick=""><i class="fa fa-plus"></i> Add Berita </button></a>
-                                    <!-- <button class="btn btn-danger" onclick=""><i class="fa fa-times"></i> Delete All </button> -->
-                                    <a href="<?php echo base_url(); ?>index.php/blog"><button class="btn btn-primary" onclick=" "><i class="fa fa-refresh"></i> Reload </button></a>
+                                    <a href="<?php echo base_url(); ?>index.php/blog/addBlog"><button class="btn btn-success" onclick=" "><i class="fa fa-plus"></i> Add Berita</button></a>
+                                    <a href="<?php echo base_url(); ?>index.php/anggota/deleteAllAnggota" onclick="return confirm('Delete all data?');"><button class="btn btn-danger" onclick=" " disabled><i class="fa fa-times"></i> Delete All </button></a>
+                                    <button class="btn btn-primary" onclick=""><i class="fa fa-refresh"></i> Reload </button>
                                   </div>
                                 </div>
                               <tr>
@@ -38,8 +38,8 @@
                                     <td> <?php echo $data_blog->nama_admin; ?> </td>
                                     <td> <?php echo $data_blog->index_pembaca; ?> </td>
                                     <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                        <a href="<?php echo base_url(); ?>index.php/blog/editBlog/<?php echo $data_blog->id_berita; ?>"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                      <a onclick="return confirm('Delete this data?');" href="<?php echo base_url(); ?>index.php/blog/deleteBlog/<?php echo $data_blog->id_berita; ?>"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></a>
                                     </td>
                                 </tr>
                               <?php } ?>

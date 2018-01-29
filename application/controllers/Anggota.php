@@ -24,7 +24,7 @@ class Anggota extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
-		public function addAnggota(){
+	public function addAnggota(){
 		$data = array(
 			'title' => 'Form tambah anggota',
 			'action' => 'add',
@@ -38,7 +38,7 @@ class Anggota extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
-		public function editAnggota($id){
+	public function editAnggota($id){
 		$data = array(
 			'title' => 'Form edit anggota',
 			'action' => 'edit',
