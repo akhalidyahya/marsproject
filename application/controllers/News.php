@@ -5,6 +5,16 @@ class News extends CI_Controller {
 
 	public function index()
 	{
+		if($this->session->tempdata('visitor') !== 'visited') {
+			$this->session->set_tempdata('visitor', 'visited', 1800);
+			$now = date('Y-m-d');
+			$id = 1;
+			$this->db->set('count','count+1',false);
+			$this->db->set('last_visitor',$now,false);
+  			$this->db->where('id',$id);
+  			$this->db->update('visitor');
+		}
+
 		$this->load->model('mod_blog');
 		$data =array(
 			'data_berita' => $this->mod_blog->getData()->result()
@@ -13,9 +23,24 @@ class News extends CI_Controller {
 	}
 
 	public function detailNews($id){
+
+		if($this->session->tempdata('visitor') !== 'visited') {
+			$this->session->set_tempdata('visitor', 'visited', 1800);
+			$now = date('Y-m-d');
+			$id = 1;
+			$this->db->set('count','count+1',false);
+			$this->db->set('last_visitor',$now,false);
+  			$this->db->where('id',$id);
+  			$this->db->update('visitor');
+
+  			$this->mod_blog->updateCounter($id);
+		}
+
 		$this->load->model('mod_blog');
+		$berita = $this->mod_blog->getDataById($id)->result();
+
 		$data = array(
-			'data_detail' => $this->mod_blog->getDataById($id)->result()
+			'data_detail' => $berita
 		);
 		$this->load->view('news_detail',$data);
 	}

@@ -34,5 +34,11 @@ class mod_anggota extends CI_Model
     	$this->db->where('id_anggota',$id);
     	return $this->db->get('anggota');
   	}
+
+  	function getJumlah(){
+  		$this->db->select('id_anggota');
+  		$this->db->from('anggota');
+  		return $this->db->count_all_results();
+  	}
 }
  ?>

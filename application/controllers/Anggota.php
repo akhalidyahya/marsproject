@@ -82,14 +82,12 @@ class Anggota extends CI_Controller {
 
 	    if($action == "add"){
 	      $this->mod_anggota->saveData($data);
-	      $data_session = array('succes' => 'success');
-			$this->session->set_userdata($data_session);
+	      $this->session->set_flashdata('error_status', 'success');
 	    }
 	    else {
 	      $id = $this->input->post('id_anggota');
 	      $this->mod_anggota->update($id,$data);
-	      $data_session = array('succes' => 'success');
-			$this->session->set_userdata($data_session);
+	      $this->session->set_flashdata('error_status', 'success');
 	    }
 	    redirect('anggota');
 
@@ -97,6 +95,7 @@ class Anggota extends CI_Controller {
 
 	public function deleteAnggota($id){
 		$this->mod_anggota->delete($id);
+		$this->session->set_flashdata('error_status', 'success');
 		redirect('anggota');
 	}
 

@@ -25,7 +25,7 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js"></script>
 
     <?php 
-      if($this->session->userdata('success')=='success'){ ?>
+      if($this->session->flashdata('error_status')=='success'){ ?>
 
         <script type="text/javascript">
           $(document).ready(function () {
@@ -35,7 +35,7 @@
               // (string | mandatory) the text inside the notification
               text: ' ',
               // (string | optional) the image to display on the left
-              image: '<?php echo base_url(); ?>assets/img/alert/success.png',
+              // image: '<?php echo base_url(); ?>assets/img/alert/success.png',
               // (bool | optional) if you want it to fade out on its own or just sit there
               sticky: true,
               // (int | optional) the time you want it to be alive for before fading out

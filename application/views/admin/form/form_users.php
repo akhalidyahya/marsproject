@@ -52,6 +52,16 @@
                                   <label class="label label-warning">Foto max 2732 x 1536 pixel</label>
                               </div>
                           </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Role</label>
+                              <div class="col-sm-10">
+                                  <select name="role" class="form-control">
+                                    <option class="form-control" value="">---</option>
+                                    <option class="form-control" value="admin">admin</option>
+                                    <option class="form-control" value="penulis">penulis</option>
+                                  </select>
+                              </div>
+                          </div>
                           <button class="btn btn-theme " type="submit">Save data</button>
                         </div>
                       </form>

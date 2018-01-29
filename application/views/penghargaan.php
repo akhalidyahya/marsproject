@@ -55,62 +55,16 @@
 	<section id="penghargaan">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/1.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+				<?php foreach ($data_penghargaan as $achievement) { ?>
+					<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
+						<div class="img-container">
+							<img src="<?php echo base_url(); ?>assets/upload/penghargaan/<?php echo $achievement->foto ?>" class="img-responsive">
+							<h1><?php echo $achievement->nama_mhs ?></h1>
+							<p><?php echo $achievement->keterangan ?></p>
+						</div>
 					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/2.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/3.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/1.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/2.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/3.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/3.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 text-center">
-					<div class="img-container">
-						<img src="<?php echo base_url(); ?>assets/img/penghargaan/3.jpg" class="img-responsive">
-						<h1>Jane Doe</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-					</div>
-				</div>
+				<?php } ?>
+				
 			</div>
 			<div class="text-center">
 				<a href="<?php echo site_url() ?>"><button>kembali ke beranda</button></a>

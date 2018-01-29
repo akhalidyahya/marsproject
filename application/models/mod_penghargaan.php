@@ -4,7 +4,7 @@
 * 
 */
 class mod_penghargaan extends CI_model
-	{
+{
 		
 	function getData(){
 		$this->db->select('*');
@@ -41,6 +41,12 @@ class mod_penghargaan extends CI_model
     	return $this->db->get('penghargaan');
   	}
 
-	}
+  	function getJumlah(){
+  		$this->db->select('id_penghargaan');
+  		$this->db->from('penghargaan');
+  		return $this->db->count_all_results();
+  	}
+
+}
 
  ?>

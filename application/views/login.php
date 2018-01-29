@@ -34,7 +34,7 @@
 		      <form method="post" class="form-login" action="<?php echo site_url('login'); ?>/loginValidation">
 		        <h2 class="form-login-heading">sign in now</h2>
 		        
-		        <?php if($this->session->userdata('error_status')=='login error') { ?>
+		        <?php if($this->session->flashdata('error_status')=='error') { ?>
 	  				<div style="width: 100%; background-color: red; color: white; text-align: center;">
 	  					Username or password is wrong
 	  				</div>

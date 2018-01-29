@@ -11,7 +11,7 @@
                               <thead>
                                 <div class="row">
                                   <div class="col-md-12">
-                                    <a href="<?php echo base_url(); ?>index.php/anggota/addAnggota"><button class="btn btn-success" onclick=" "><i class="fa fa-plus"></i> Add Anggota </button></a>
+                                    <a href="<?php echo base_url(); ?>index.php/anggota/addAnggota"><button class="btn btn-success" onclick=" " <?php if($this->session->userdata('role') != 'admin') echo "disabled" ?>><i class="fa fa-plus"></i> Add Anggota </button></a>
                                     <a href="<?php echo base_url(); ?>index.php/anggota/deleteAllAnggota" onclick="return confirm('Delete all data?');"><button class="btn btn-danger" onclick=" " disabled><i class="fa fa-times"></i> Delete All </button></a>
                                     <button class="btn btn-primary" onclick=""><i class="fa fa-refresh"></i> Reload </button>
                                   </div>
@@ -32,8 +32,8 @@
                                   <td><?php echo $anggota->nama_divisi; ?></td>
                                   <td><?php echo $anggota->jabatan; ?></td>
                                   <td>
-                                      <a href="<?php echo base_url(); ?>index.php/anggota/editAnggota/<?php echo $anggota->id_anggota; ?>"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                                      <a onclick="return confirm('Delete this data?');" href="<?php echo base_url(); ?>index.php/anggota/deleteAnggota/<?php echo $anggota->id_anggota; ?>"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></a>
+                                      <a href="<?php echo base_url(); ?>index.php/anggota/editAnggota/<?php echo $anggota->id_anggota; ?>"><button class="btn btn-primary btn-xs" <?php if($this->session->userdata('role') != 'admin') echo "disabled" ?>><i class="fa fa-pencil"></i></button></a>
+                                      <a onclick="return confirm('Delete this data?');" href="<?php echo base_url(); ?>index.php/anggota/deleteAnggota/<?php echo $anggota->id_anggota; ?>"><button <?php if($this->session->userdata('role') != 'admin') echo "disabled" ?> class="btn btn-danger btn-xs"><i class="fa fa-trash-o " ></i></button></a>
                                   </td>
                               </tr>
                               <?php } ?>

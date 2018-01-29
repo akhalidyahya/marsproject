@@ -43,20 +43,19 @@ class Divisi extends CI_Controller {
 
 		if($action == "add"){
 	      $this->mod_divisi->saveData($data);
-	      $data_session = array('succes' => 'success');
-			$this->session->set_userdata($data_session);
+	      $this->session->set_flashdata('error_status', 'success');
 	    }
 	    else {
 	      $id = $this->input->post('id_divisi');
 	      $this->mod_divisi->update($id,$data);
-	      $data_session = array('succes' => 'success');
-			$this->session->set_userdata($data_session);
+	      $this->session->set_flashdata('error_status', 'success');
 	    }
 	    redirect('divisi');
 	}
 
 	public function deleteDivisi($id) {
 		$this->mod_divisi->delete($id);
+		$this->session->set_flashdata('error_status', 'success');
 		redirect('divisi');
 	}
 

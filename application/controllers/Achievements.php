@@ -74,20 +74,19 @@ class Achievements extends CI_Controller {
 
     	if($action == "add"){
 	      $this->mod_penghargaan->saveData($data);
-	      $data_session = array('succes' => 'success');
-			$this->session->set_userdata($data_session);
+	      $this->session->set_flashdata('error_status', 'success');
 	    }
 	    else {
 	      $id = $this->input->post('id_penghargaan');
 	      $this->mod_penghargaan->update($id,$data);
-	      $data_session = array('succes' => 'success');
-			$this->session->set_userdata($data_session);
+	      $this->session->set_flashdata('error_status', 'success');
 	    }
 	    redirect('Achievements');
 	}
 
 	public function deletePenghargaan($id){
 		$this->mod_penghargaan->delete($id);
+		$this->session->set_flashdata('error_status', 'success');
 		redirect('Achievements');
 	}
 

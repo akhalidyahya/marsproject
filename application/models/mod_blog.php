@@ -51,6 +51,24 @@ class mod_blog extends CI_model
     	return $this->db->get('berita');
   	}
 
+  	function updateCounter($id){
+  		$this->db->set('index_pembaca','index_pembaca+1',false);
+  		$this->db->where('id_berita',$id);
+  		$this->db->update('berita');
+  	}
+
+  	function getJumlah(){
+  		$this->db->select('id_berita');
+  		$this->db->from('berita');
+  		return $this->db->count_all_results();
+  	}
+
+  	function getPembaca(){
+  		$this->db->select('SUM(index_pembaca) as visitor');
+  		$this->db->from('berita');
+  		return $this->db->get()->row()->visitor;
+  	}
+
 }
 
  ?>

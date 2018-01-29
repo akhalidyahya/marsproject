@@ -32,13 +32,13 @@ class Login extends CI_Controller {
 	        	'id' => $hasil->id_admin,
 	        	'nama' => $hasil->nama_admin,
 	        	'foto' => $hasil->foto_admin,
+	        	'role' => $hasil->role,
 	        	'status' => 'login'
 	        );
 	    	$this->session->set_userdata($data_session);
 	       	redirect('dashboard');
 		} else {
-			$data_session = array('error_status' => 'login error');
-			$this->session->set_userdata($data_session);
+			$this->session->set_flashdata('error_status', 'error');
 			redirect('login');
 		}
 

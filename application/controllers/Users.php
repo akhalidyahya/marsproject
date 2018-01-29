@@ -51,11 +51,13 @@ class Users extends CI_Controller {
 		$action = $this->input->post('action');
 		$nama = $this->input->post('nama');
 		$username = $this->input->post('username');
+		$role = $this->input->post('role');
 		$password = md5($this->input->post('password'));
 		$data = array(
       		'nama_admin' => $nama,
       		'username' => $username,
-      		'password' => $password
+      		'password' => $password,
+      		'role' => $role
     	);
 
     	$config['upload_path'] = realpath(APPPATH . '../assets/upload/user');
@@ -76,20 +78,19 @@ class Users extends CI_Controller {
 
     	if($action == "add"){
 	      $this->mod_user->saveData($data);
-	      $data_session = array('succes' => 'success');
-			$this->session->set_userdata($data_session);
+	      $this->session->set_flashdata('error_status', 'success');
 	    }
 	    else {
 	      $id = $this->input->post('id_admin');
 	      $this->mod_user->update($id,$data);
-	      $data_session = array('succes' => 'success');
-			$this->session->set_userdata($data_session);
+	      $this->session->set_flashdata('error_status', 'success');
 	    }
 	    redirect('users');
 	}
 
 	public function deleteUser($id){
 		$this->mod_user->delete($id);
+		$this->session->set_flashdata('error_status', 'success');
 		redirect('users');
 	}
 

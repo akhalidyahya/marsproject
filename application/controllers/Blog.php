@@ -81,14 +81,12 @@ class Blog extends CI_Controller {
 
 	    if($action == "add"){
 	      $this->mod_blog->saveData($data);
-	      $data_session = array('succes' => 'success');
-			$this->session->set_userdata($data_session);
+	      $this->session->set_flashdata('error_status', 'success');
 	    }
 	    else {
 	      $id = $this->input->post('id_anggota');
 	      $this->mod_blog->update($id,$data);
-	      $data_session = array('succes' => 'success');
-			$this->session->set_userdata($data_session);
+	      $this->session->set_flashdata('error_status', 'success');
 	    }
 	    redirect('blog');
 
@@ -96,6 +94,7 @@ class Blog extends CI_Controller {
 
 	public function deleteBlog($id){
 		$this->mod_blog->delete($id);
+		$this->session->set_flashdata('error_status', 'success');
 		redirect('blog');
 	}
 }

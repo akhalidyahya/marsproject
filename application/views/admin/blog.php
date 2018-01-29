@@ -13,7 +13,7 @@
                                   <div class="col-md-12">
                                     <a href="<?php echo base_url(); ?>index.php/blog/addBlog"><button class="btn btn-success" onclick=" "><i class="fa fa-plus"></i> Add Berita</button></a>
                                     <a href="<?php echo base_url(); ?>index.php/anggota/deleteAllAnggota" onclick="return confirm('Delete all data?');"><button class="btn btn-danger" onclick=" " disabled><i class="fa fa-times"></i> Delete All </button></a>
-                                    <button class="btn btn-primary" onclick=""><i class="fa fa-refresh"></i> Reload </button>
+                                    <button class="btn btn-primary" onclick="location.reload()"><i class="fa fa-refresh"></i> Reload </button>
                                   </div>
                                 </div>
                               <tr>
