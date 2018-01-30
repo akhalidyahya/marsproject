@@ -18,7 +18,7 @@
                                 <span class="li_params"></span>
                                 <h3><?php echo $visitor ?></h3>
                             </div>
-                                <p><?php echo $visitor ?> orang telah berkunjung ke web MP</p>
+                                <p>Web telah dikunjungi <?php echo $visitor ?> kali</p>
                             <h3 class="text-center">Pengunjung</h3>
                         </div>
                         <div class="col-md-3 col-sm-3 box0">

@@ -1,4 +1,4 @@
- <footer class="site-footer" style="position: absolute; bottom: 0; right: 0; width: 100%; z-index: -1;">
+ <footer class="site-footer" style="">
           <div class="text-center">
               © copyright <?php echo date('Y'); ?> | Mars Project
               <a href="basic_table.html#" class="go-top">
