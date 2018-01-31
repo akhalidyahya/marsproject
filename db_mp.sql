@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 26, 2018 at 08:48 PM
+-- Generation Time: Jan 31, 2018 at 10:30 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.2.1
 
@@ -33,15 +33,16 @@ CREATE TABLE `admin` (
   `nama_admin` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `foto_admin` varchar(50) NOT NULL
+  `foto_admin` varchar(50) NOT NULL,
+  `role` set('admin','penulis') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `password`, `foto_admin`) VALUES
-(1, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'ui-sam.jpg');
+INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `password`, `foto_admin`, `role`) VALUES
+(1, 'admin_super', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'ui-sam.jpg', 'admin');
 
 -- --------------------------------------------------------
 
@@ -75,7 +76,7 @@ INSERT INTO `anggota` (`id_anggota`, `nama_anggota`, `foto_anggota`, `jabatan`, 
 CREATE TABLE `berita` (
   `id_berita` int(11) NOT NULL,
   `judul` varchar(50) NOT NULL,
-  `isi` varchar(1000) NOT NULL,
+  `isi` varchar(1500) NOT NULL,
   `gambar` varchar(50) NOT NULL,
   `tanggal_buat` date NOT NULL,
   `id_admin` int(11) NOT NULL,
@@ -87,7 +88,10 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id_berita`, `judul`, `isi`, `gambar`, `tanggal_buat`, `id_admin`, `index_pembaca`) VALUES
-(1, 'Grand opening Website Mars Project', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'blog-1.jpg', '2018-01-24', 1, 0);
+(1, 'Grand opening Website Mars Project', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'blog-1.jpg', '2018-01-24', 1, 1),
+(2, 'Mars Project is?', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'blog-1.jpg', '2018-01-24', 1, 3),
+(3, 'Program Kerja Mars Project', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'blog-1.jpg', '2018-01-24', 1, 2),
+(4, 'Kenali Sekret dengan baik', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'blog-1.jpg', '2018-01-24', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -134,6 +138,25 @@ INSERT INTO `penghargaan` (`id_penghargaan`, `nama_mhs`, `foto`, `keterangan`) V
 (5, 'Will Smith', 'will.jpg', 'Juara 1 lomba Karya tulis ilmiah di University of Michigan'),
 (6, 'Jimmy Fallon', 'jim.jpg', 'Juara 1 lomba Karya tulis ilmiah di University of Michigan');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visitor`
+--
+
+CREATE TABLE `visitor` (
+  `id` int(11) NOT NULL,
+  `count` int(11) NOT NULL,
+  `last_visitor` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `visitor`
+--
+
+INSERT INTO `visitor` (`id`, `count`, `last_visitor`) VALUES
+(1, 6, '0000-00-00');
+
 --
 -- Indexes for dumped tables
 --
@@ -142,7 +165,8 @@ INSERT INTO `penghargaan` (`id_penghargaan`, `nama_mhs`, `foto`, `keterangan`) V
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_admin`);
+  ADD PRIMARY KEY (`id_admin`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indexes for table `anggota`
@@ -171,6 +195,12 @@ ALTER TABLE `penghargaan`
   ADD PRIMARY KEY (`id_penghargaan`);
 
 --
+-- Indexes for table `visitor`
+--
+ALTER TABLE `visitor`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -178,7 +208,7 @@ ALTER TABLE `penghargaan`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `anggota`
@@ -190,7 +220,7 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `divisi`
@@ -203,6 +233,12 @@ ALTER TABLE `divisi`
 --
 ALTER TABLE `penghargaan`
   MODIFY `id_penghargaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `visitor`
+--
+ALTER TABLE `visitor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
