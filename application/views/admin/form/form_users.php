@@ -9,6 +9,7 @@
       $nama = $data_admin->nama_admin;
       $username = $data_admin->username;
       // $password = $data_admin->password;
+      $role = $data_admin->role;
     }
 
   }
@@ -42,14 +43,14 @@
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Password</label>
                               <div class="col-sm-10">
-                                  <input name="password" type="password" class="form-control" required value="<?php echo $password ?>">
+                                  <input name="password" type="password" class="form-control" <?php if($action == 'add') echo "required" ?> value="<?php echo $password ?>">
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">foto</label>
                               <div class="col-sm-10">
                                   <input name="foto" type="file" class="form-control" <?php if($action == 'add'){echo "required";} ?>>
-                                  <label class="label label-warning">Foto max 2732 x 1536 pixel</label>
+                                  <label class="label label-danger">Foto max 2732 x 1536 pixel</label>
                               </div>
                           </div>
                           <div class="form-group">
@@ -57,8 +58,8 @@
                               <div class="col-sm-10">
                                   <select name="role" class="form-control">
                                     <option class="form-control" value="">---</option>
-                                    <option class="form-control" value="admin">admin</option>
-                                    <option class="form-control" value="penulis">penulis</option>
+                                    <option class="form-control" <?php if($role == 'admin') echo "selected" ?> value="admin">admin</option>
+                                    <option class="form-control" value="penulis" <?php if($role == 'penulis') echo "selected" ?>>penulis</option>
                                   </select>
                               </div>
                           </div>

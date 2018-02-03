@@ -338,6 +338,13 @@ body.open {
 	padding: 10px;
 }
 
+.news-box .isi a {
+	font-size: 16px;
+	color: #2dc1d3;
+	font-family: "montserrat reguler";
+	text-transform: none;
+}
+
 .news-box a, .main-news a {
 	font-size: 18px;
 	text-decoration: none;

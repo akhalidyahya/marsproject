@@ -24,12 +24,13 @@
 	</div>
 	<div class="menu-overlay">
 		<a style="margin: 0" href="<?php echo base_url(); ?>"><h1>MARS PROJECT PNJ</h1></a>
+		<a href="<?php echo base_url() ?>">beranda</a>
 		<a href="<?php echo base_url() ?>#about">tentang kami</a>
 		<a href="<?php echo base_url() ?>#visi-misi">visi misi</a>
 		<a href="<?php echo base_url() ?>#struktur-organisasi">struktur organisasi</a>
 		<a href="<?php echo base_url() ?>#latest-news">berita</a>
 		<a href="<?php echo base_url() ?>#penghargaan">penghargaan</a>
-		<p>Keep in touch with us!</p>
+		<!-- <p>Keep in touch with us!</p> -->
 		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/fb.png" height="35px"></a></span>
 		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/tw.png" height="35px"></a></span>
 		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/ig.png" height="35px"></a></span>

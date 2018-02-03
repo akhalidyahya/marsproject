@@ -7,6 +7,7 @@
       $id = $data_anggota->id_anggota;
       $nama = $data_anggota->nama_anggota;
       $jabatan = $data_anggota->jabatan;
+      $id_divisi = $data_anggota->id_divisi;
     }
 
   }
@@ -35,7 +36,8 @@
                               <label class="col-sm-2 col-sm-2 control-label">foto</label>
                               <div class="col-sm-10">
                                   <input name="foto" type="file" class="form-control" <?php if($action == 'add'){echo "required";} ?>>
-                                  <label class="label label-warning">Foto max 2732 x 1536 pixel</label>
+                                  <label class="label label-danger">Foto max 2732 x 1536 pixel</label>
+                                  <label class="label label-danger">Dimensi foto harus 1x1</label>
                               </div>
                           </div>
                           <div class="form-group">
@@ -46,7 +48,7 @@
                                     <?php
                                       if(!empty($data_divisi)){
                                      foreach ($data_divisi as $divisi) { ?>
-                                        <option class="form-control" value="<?php echo $divisi->id_divisi; ?>"><?php echo $divisi->nama_divisi; ?></option>
+                                        <option class="form-control" value="<?php echo $divisi->id_divisi; ?>" <?php if($divisi->id_divisi == $id_divisi) echo "selected" ?>><?php echo $divisi->nama_divisi; ?></option>
                                     <?php } } else echo "x"; ?>
                                 </select>
                               </div>

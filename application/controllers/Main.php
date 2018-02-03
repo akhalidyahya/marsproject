@@ -18,11 +18,14 @@ class Main extends CI_Controller {
 		$this->load->model('mod_blog');
 		$this->load->model('mod_divisi');
 		$this->load->model('mod_penghargaan');
+		$this->load->model('mod_slider');
 		$data = array(
+			'data_slider' => $this->mod_slider->getData()->result(),
 			'data_struktur' => $this->mod_anggota->getData()->result(),
 			'data_divisi' => $this->mod_divisi->getData()->result(),
 			'data_berita' => $this->mod_blog->getLatestData()->result(),
 			'data_penghargaan' => $this->mod_penghargaan->getLatestData()->result()
+
 		);
 		$this->load->view('index',$data);
 	}

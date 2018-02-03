@@ -3,36 +3,29 @@
             <h3><i class="fa fa-angle-right"></i> Slider </h3>
               <div class="row mt">
                   <div class="col-md-12">
-                      <div class="content-panel">
-                          <table class="table table-striped table-advance table-hover">
+                      <div class="content-panel" style="background-color: #e2e2e2">
+                        <div class="row">
+                          <div class="col-md-12">
                             <h4><i class="fa fa-angle-right"></i> List Photo</h4>
-                            <!-- <hr> -->
-                              <thead>
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <button class="btn btn-success" onclick=""><i class="fa fa-plus"></i> Add Photo </button>
-                                    <button class="btn btn-danger" onclick=""><i class="fa fa-times"></i> Delete All </button>
-                                    <button class="btn btn-primary" onclick=""><i class="fa fa-refresh"></i> Reload </button>
-                                  </div>
+                            <a href="<?php echo base_url()?>index.php/slider/addSlider "><button class="btn btn-success" onclick=""><i class="fa fa-plus"></i> Add Photo </button></a>
+                            <button class="btn btn-danger" onclick="" disabled><i class="fa fa-times"></i> Delete All </button>
+                            <button class="btn btn-primary" onclick=""><i class="fa fa-refresh"></i> Reload </button>
+                          </div>
+                          <div class="col-md-12 text-center" style="margin: 20px 0px;">
+                            <?php foreach ($data_slider as $slider) { ?>
+                              <div class="col-xs-6 col-sm-4 col-md-3">
+                                <img style="max-width: 200px;" src="<?php echo base_url(); ?>assets/upload/slider/<?php echo $slider->slider_image; ?>">
+                                <br>
+                                <div style="padding:10px 0px;">
+                                  <a onclick="return confirm('Delete this data?');" href="<?php echo base_url(); ?>index.php/slider/deleteSlider/<?php echo $slider->id_slider; ?>"><button class="btn btn-danger btn-xs" <?php if($this->session->userdata('role') != 'admin') echo "disabled" ?>>hapus</button></a>
                                 </div>
-                              <tr>
-                                  <th> Photo </th>
-                                  <th> Action </th>
-                              </tr>
-                              </thead>
-                              <tbody>
-                              <tr>
-                                  <td> Company Ltd </td>
-                                  <td>
-                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                  </td>
-                              </tr>
-                              </tbody>
-                          </table>
+                               </div>
+                            <?php } ?>
+
+                          </div>
+                        </div>
                       </div><!-- /content-panel -->
                   </div><!-- /col-md-12 -->
               </div><!-- /row -->
-
-    </section><! --/wrapper -->
+    </section><!--/Wrapper-->
       </section>

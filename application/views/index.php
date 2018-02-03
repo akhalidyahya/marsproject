@@ -24,12 +24,13 @@
 	</div>
 	<div class="menu-overlay">
 		<a style="margin: 0" href="<?php echo base_url(); ?>"><h1>MARS PROJECT PNJ</h1></a>
+		<a href="<?php echo base_url() ?>">beranda</a>
 		<a class="scroll" id="nav" href="#about">tentang kami</a>
 		<a class="scroll" id="nav" href="#visi-misi">visi misi</a>
 		<a class="scroll" id="nav" href="#struktur-organisasi">struktur organisasi</a>
 		<a class="scroll" id="nav" href="#latest-news">berita</a>
 		<a class="scroll" id="nav" href="#penghargaan">penghargaan</a>
-		<p>Keep in touch with us!</p>
+		<!-- <p>Keep in touch with us!</p> -->
 		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/fb.png" height="35px"></a></span>
 		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/tw.png" height="35px"></a></span>
 		<span><a href="#"><img src="<?php echo base_url(); ?>assets/img/sosmed/ig.png" height="35px"></a></span>
@@ -42,9 +43,9 @@
 		<div class="ro">
 			<div class="col-xs-12">
 				<div id="hero-slider" class="owl-carousel owl-theme">
-					<div class="item"><img src="<?php echo base_url(); ?>assets/img/mp.jpg"></div>
-					<div class="item"><img src="<?php echo base_url(); ?>assets/img/12.jpg"></div>
-					<div class="item"><img src="<?php echo base_url(); ?>assets/img/9.jpg"></div>
+					<?php foreach ($data_slider as $slider) { ?>
+					<div class="item"><img src="<?php echo base_url(); ?>assets/upload/slider/<?php echo $slider->slider_image ?>"></div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>

@@ -34,7 +34,7 @@
                               <label class="col-sm-2 col-sm-2 control-label">Image</label>
                               <div class="col-sm-10">
                                   <input name="foto" type="file" class="form-control" <?php if($action == 'add'){echo "required";} ?>>
-                                  <label class="label label-warning">Foto max 2732 x 1536 pixel</label>
+                                  <label class="label label-danger">Foto max 2732 x 1536 pixel</label>
                               </div>
                           </div>
                           <div class="form-group">

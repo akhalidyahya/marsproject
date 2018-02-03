@@ -14,8 +14,8 @@
                       </a>
                   </li>
 
-                  <li class="sub-menu <?php if($this->uri->segment(1)=="slider"){ echo "active"; } ?>">
-                      <a href="<?php echo site_url('slider'); ?>" >
+                  <li class="sub-menu">
+                      <a class="<?php if($this->uri->segment(1)=="slider"){ echo "active"; } ?>" href="<?php echo site_url('slider'); ?>" >
                           <i class="fa fa-picture-o"></i>
                           <span>Slider</span>
                       </a>
